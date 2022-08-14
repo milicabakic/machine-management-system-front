@@ -1,0 +1,28 @@
+<div>
+  <h3>Machines</h3>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-10">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">date</th>
+          <th scope="col">machine ID</th>
+          <th scope="col">scheduled action</th>
+          <th scope="col">message</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let error of errors">
+          <td>{{error.date}}</td>
+          <td>{{error.machine_id}}</td>
+          <td>{{error.scheduledAction}}</td>
+          <td>{{error.message}}</td>
+        <tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

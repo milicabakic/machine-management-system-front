@@ -1,0 +1,56 @@
+<div>
+  <h3>Machines</h3>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-10">
+      <form (submit)="searchMachine()" class="mb-5">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" id="status" name="status" placeholder="Status">
+        </div>
+        <div class="col">
+          <input type="date" class="form-control" id="dateFrom" name="dateFrom" placeholder="Date From">
+        </div>
+        <div class="col">
+          <input type="date" class="form-control" id="dateTo" name="dateTo" placeholder="Date To">
+        </div>
+        <div class="col">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+      </form>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">name</th>
+          <th scope="col">status</th>
+          <th scope="col">active</th>
+          <th scope="col">creator</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let machine of machines">
+          <td>{{machine.id}}</td>
+          <td>{{machine.name}}</td>
+          <td>{{machine.status}}</td>
+          <td>{{machine.active}}</td>
+          <td>{{machine.creator}}</td>
+          <!--
+          <td><button type="submit" class="btn btn-secondary mt-2" name="button" *ngIf="deletePermission" (click)="delete(user.id)">Delete</button></td>
+           -->
+          <td><button type="submit" class="btn btn-secondary mt-2" name="button" *ngIf="destroyPermission" (click)="destroy(machine.id)">Destroy</button></td>
+          <td><button type="submit" class="btn btn-secondary mt-2" name="button" *ngIf="startPermission" (click)="start(machine.id)">Start</button></td>
+          <td><button type="submit" class="btn btn-secondary mt-2" name="button" *ngIf="restartPermission" (click)="restart(machine.id)">Restart</button></td>
+          <td><button type="submit" class="btn btn-secondary mt-2" name="button" *ngIf="stopPermission" (click)="stop(machine.id)">Stop</button></td>
+        <tr>
+        </tbody>
+      </table>
+      <td><button type="submit" class="btn btn-primary mt-2" name="button" *ngIf="actionPermission" (click)="schedule()">Schedule action for machine</button></td>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div>
+  <h3>Create a new machine</h3>
+  <div>
+    <form (submit)="addMachine()" class="mb-5">
+      <div class="row">
+        <div class="col-sm">
+          <input type="text" class="form-control" id="name" name="name" placeholder="Name" [(ngModel)]="name">
+          <br>
+        </div>
+      </div>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

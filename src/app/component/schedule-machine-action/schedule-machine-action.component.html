@@ -1,0 +1,33 @@
+<div>
+  <h3>Schedule action for specific machine</h3>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col">
+      <form (submit)="schedule_action()" class="mb-5">
+        <label for="selectedMachine">Select machine</label>
+        <br>
+        <select class="form-select" name="selectedMachine" id="selectedMachine" [(ngModel)]="selectedMachine">
+          <option *ngFor="let m of machines_string" [value]="m">
+            {{m}}
+          </option>
+        </select>
+        <br>
+        <label for="selectedAction">Choose action</label>
+        <br>
+        <select class="form-select" name="selectedAction" id="selectedAction" [(ngModel)]="selectedAction">
+          <option *ngIf="startPermission" value="Start">Start</option>
+          <option *ngIf="stopPermission" value="Stop">Stop</option>
+          <option *ngIf="restartPermission" value="Restart">Restart</option>
+        </select>
+        <br>
+        <label for="date">Choose date</label>
+        <br>
+        <input type="datetime-local" step=1 class="form-control" id="date" name="date" placeholder="Date" [(ngModel)]="date">
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div>
+  <h3>Update user {{id}}</h3>
+  <div>
+    <form (submit)="updateUser()" class="mb-5">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm">
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username" [(ngModel)]="username">
+            <br>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name" [(ngModel)]="name">
+            <br>
+            <input type="text" class="form-control" id="surname" name="surname" placeholder="Surname" [(ngModel)]="surname">
+            <br>
+            <label id="permissions"></label>
+            <br>
+            <br>
+            <label for="selectedPermissions">Select permissions for user:</label>
+            <br>
+            <select class="form-select" multiple name="selectedPermissions" id="selectedPermissions" [(ngModel)]="selectedPermissions">
+              <option value="can_create_users">User can create users</option>
+              <option value="can_read_users">User can read users</option>
+              <option value="can_update_users">User can update users</option>
+              <option value="can_delete_users">User can delete users</option>
+            </select>
+
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
